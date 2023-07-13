@@ -13,8 +13,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import SearchIcon from '@mui/icons-material/Search';
+import Logo from '../assets/unbounce-icon-dark.svg'
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Products','Solutions','Learn', 'Contact', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveTopBar() {
@@ -37,10 +38,9 @@ function ResponsiveTopBar() {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
+    <AppBar position="fixed">
+      <Container sx={{ margin: 'auto'}} maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -56,7 +56,7 @@ function ResponsiveTopBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            Multor
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -89,13 +89,12 @@ function ResponsiveTopBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem sx={{ padding: '0 25px'}} key={page} onClick={handleCloseNavMenu} >
+                  <Typography textAlign="center" padding={'0 20px'}>{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -112,7 +111,7 @@ function ResponsiveTopBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            Multer
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
